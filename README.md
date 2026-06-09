@@ -87,10 +87,6 @@ MySQL Database
 
 ![Client Lawyers](screenshots/client_lawyers.png)
 
-### Client Bookings
-
-![Client Bookings](screenshots/client_bookings.png)
-
 ### Lawyer Dashboard
 
 ![Lawyer Dashboard](screenshots/lawyer_dashboard.png)

@@ -5,4 +5,4 @@ __pycache__/
 lawfirmss_backup.sql
 Online Lawyer Booking System Backup/
 media/
-.idea/
+.idea/.DS_Store

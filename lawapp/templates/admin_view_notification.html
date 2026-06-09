@@ -1,0 +1,98 @@
+{% include 'admin_header.html'%}
+{% load static %}
+
+
+ <body>
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	     <div class="container">
+	      <a class="navbar-brand" href="#">ONLINE LAWYER BOOKING SYSTEM</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="{% url 'admin_home' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{% url 'admin_view_client' %}" class="nav-link">Clients</a></li>
+	          <li class="nav-item"><a href="{% url 'admin_view_lawyer' %}" class="nav-link">Lawyers</a></li>
+<!--                <li class="nav-item"><a href="{% url 'admin_add_notification' %}" class="nav-link">Add Notifications</a></li>-->
+<!--                  <li class="nav-item"><a href="{% url 'admin_view_notification' %}" class="nav-link">View Notifications</a></li>-->
+<!--				<li class="nav-item"><a href="{% url 'admin_change_password' %}" class="nav-link">Change Password</a></li>-->
+<!--	          <li class="nav-item"><a href="{% url 'admin_logout' %}" class="nav-link">Logout</a></li>-->
+                <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Notifications
+                           </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <a class="dropdown-item" href="{% url 'admin_add_notification' %}">Add Notifications</a>
+                              <a class="dropdown-item" href="{% url 'admin_view_notification' %}">View Notifications</a>
+                           </div>
+                        </li>
+				<li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ Account                           </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <a class="dropdown-item" href="{% url 'admin_change_password' %}">Change Password</a>
+                              <a class="dropdown-item" href="{% url 'admin_logout' %}">Logout</a>
+                           </div>
+                        </li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+ </body>
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate mb-5 text-center">
+<!--          	<p class="breadcrumbs mb-0"><span class="mr-2"><a>Home <i class="fa fa-chevron-right"></i></a></span>Notifications<span><i class="fa fa-chevron-right"></i></span></p>-->
+            <h1 class="mb-0 bread"> View Notifications</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+<br>
+<div class="container">
+
+
+<!--<center><h2 class="mb-4 section-title"><strong>My Notifications</strong></h2></center>-->
+<table  border="1" cellpadding="10" cellspacing="10" width="100%">
+         <thead>
+     <tr class="table-primary">
+             <th>Title</th>
+             <th>Description</th>
+             <th>Date & Time</th>
+         <th>Delete</th>
+
+
+         </tr>
+         </thead>
+         <tbody>
+         {% for x in note %}
+            <tr>
+
+             <td>{{x.title}}</td>
+             <td>{{x.description}}</td>
+             <td>{{x.date_time}}</td>
+                 <td> <a href ="{% url 'del_notifications' id=x.id  %}" onclick="return confirm('Really Do You Want To Delete?')" class="btn btn-danger">Delete</a></td>
+
+			{% empty %}
+        <tr>
+            <td colspan="4" style="text-align: center; color:red">No Data Found</td>
+        </tr>
+        {% endfor %}
+		 </tbody>
+</table>
+    </div>
+<br>
+<br>
+<br>
+
+
+ {% include 'client_footer.html' %}
+

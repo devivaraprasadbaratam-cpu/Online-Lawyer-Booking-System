@@ -1,0 +1,112 @@
+{% include 'header.html'%}
+{% load static %}
+
+  <body>
+
+
+
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="#">ONLINE LAWYER BOOKING SYSTEM</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+<!--				<li class="nav-item"><a href="{% url 'attorney' %}" class="nav-link">Attorneys</a></li>-->
+	          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+				<li class="nav-item active"><a href="{% url 'lawyer_login' %}" class="nav-link">Lawyers</a></li>
+	          <li class="nav-item"><a href="{% url 'client_login' %}" class="nav-link">Client</a></li>
+				<li class="nav-item"><a href="{% url 'admin_login' %}" class="nav-link">Admin</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/c_home.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate mb-5 text-center">
+<!--          	<p class="breadcrumbs mb-0"><span class="mr-2"><a href="/">Home <i class="fa fa-chevron-right"></i></a></span>Lawyers Login <span><i class="fa fa-chevron-right"></i></span></p>-->
+            <h1 class="mb-0 bread">Lawyers Login</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section bg-light">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-12">
+						<div class="wrapper px-md-4">
+							<div class="row mb-5">
+								<div class="col-md-3">
+
+				        		<div class="text">
+<!--					            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>-->
+
+					          </div>
+				          </div>
+								</div>
+								<div class="col-md-3">
+									<div class="dbox w-100 text-center">
+
+				          </div>
+								</div>
+
+							<div class="row no-gutters">
+								<div class="col-md-7">
+
+									<div class="contact-wrap w-100 p-md-5 p-4">
+
+                            <div style="color:red">{{msg}}</div>
+										{% if messages %}
+                                        {% for message in messages %}
+										<h6 style="color:green">{{message}}</h6>
+                                        {% endfor %}
+									{% endif %}
+										<h3 class="mb-4">Lawyers Login</h3>
+										<form method="POST" action="" id="contactForm" name="contactForm" class="contactForm">
+
+											<div class="row">
+												<div class="col-md-12">
+													{% csrf_token %}
+													<div class="form-group">
+														<label class="label" for="email">Email Address</label>
+														<input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-group">
+														<label class="label" for="password">Password</label>
+														<input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-group">
+														<input type="submit" value="Login" class="btn btn-primary">&nbsp;&nbsp;User Not Exist ? <a href="{% url 'lawyer_reg' %}" style="color:red">Register</a>
+														<div class="submitting"></div>
+
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    {% include 'footer.html' %}
+  </body>
+</html>

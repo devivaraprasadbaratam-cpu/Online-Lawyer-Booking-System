@@ -1,8 +1,5 @@
-.venv1/
+.DS_Store
+.idea/
+.venv/
 __pycache__/
 *.pyc
-*.sqlite3
-lawfirmss_backup.sql
-Online Lawyer Booking System Backup/
-media/
-.idea/.DS_Store

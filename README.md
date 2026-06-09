@@ -66,48 +66,104 @@ The Online Lawyer Booking System is a web-based application developed using Djan
 ## System Architecture
 
 Client Browser
+
 ↓
+
 Django Application
+
 ↓
+
 MySQL Database
 
 ---
 
 ## Screenshots
 
-Screenshots are available in the screenshots folder.
+### Home Page
+
+![Home Page](screenshots/home_page.png)
+
+### Client Lawyers
+
+![Client Lawyers](screenshots/client_lawyers.png)
+
+### Client Bookings
+
+![Client Bookings](screenshots/client_bookings.png)
+
+### Lawyer Dashboard
+
+![Lawyer Dashboard](screenshots/lawyer_dashboard.png)
+
+### View Bookings
+
+![View Bookings](screenshots/view_booking.png)
+
+### Manage Files
+
+![Manage Files](screenshots/manage_files.png)
+
+### Feedback Page
+
+![Feedback Page](screenshots/feedback.png)
+
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin_dashboard.png)
 
 ---
 
 ## Installation
 
-1. Clone the repository
+### Clone Repository
 
+```bash
 git clone https://github.com/devivaraprasadbaratam-cpu/Online-Lawyer-Booking-System.git
+```
 
-2. Navigate to project folder
+### Navigate to Project Folder
 
+```bash
 cd Online-Lawyer-Booking-System
+```
 
-3. Install dependencies
+### Install Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-4. Configure MySQL database
+### Run Migrations
 
-5. Run migrations
-
+```bash
 python manage.py migrate
+```
 
-6. Start server
+### Start Server
 
+```bash
 python manage.py runserver
+```
+
+---
+
+## Project Modules
+
+### Admin
+Manages lawyers, clients, and notifications.
+
+### Lawyer
+Handles bookings, services, file uploads, and client communication.
+
+### Client
+Books lawyers, downloads files, submits feedback, and raises queries.
 
 ---
 
 ## Author
 
-Devi Vara Prasad Baratam
+**Devi Vara Prasad Baratam**
 
-GitHub:
+GitHub Profile:
+
 https://github.com/devivaraprasadbaratam-cpu
